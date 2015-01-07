@@ -8,7 +8,7 @@ Prerequisites
 -------------
 
 1. Maven 3.x
-2. Java >= 1.7
+1. Java >= 1.7
 
 Running
 -------
