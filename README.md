@@ -7,8 +7,8 @@ connected server sends to it.
 Prerequisites
 -------------
 
-Maven 3.x
-Java >= 1.7
+1. Maven 3.x
+2. Java >= 1.7
 
 Running
 -------
@@ -22,3 +22,19 @@ WebSocket UPGRADE request in the format of:
 
 The headers are split on the FIRST colon, but subsequent colons are retained
 in the header value.
+
+Command-Line Options
+--------------------
+    Usage: websocket-test [options]
+      Options:
+      --header-file
+           A file container headers to be appended to all requests
+      -s, --server-url 
+           The Websocket server to connect to. (ws[s]://host:port/path/to/websocket)
+           REQUIRED
+      -t, --timeout
+           The amount of time to run before exiting
+           Default: 5000
+      --unsafe-ssl
+           Disable SSL certificate validation
+           Default: false

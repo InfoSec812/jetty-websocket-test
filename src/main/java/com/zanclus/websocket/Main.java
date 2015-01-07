@@ -29,6 +29,7 @@ public class Main {
             parser.parse(args);
         } catch (Exception e) {
             LOG.error("Error parsing configuration.", e);
+            parser.usage();
             return;
         }
 
