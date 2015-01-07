@@ -7,8 +7,8 @@ connected server sends to it.
 Prerequisites
 -------------
 
-Maven 3.x
-Java >= 1.7
+1. Maven 3.x
+1. Java >= 1.7
 
 Running
 -------
