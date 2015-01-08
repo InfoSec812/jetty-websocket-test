@@ -38,6 +38,7 @@ public class Handler {
     @OnWebSocketError
     public void onError(Throwable error) {
         LOG.error("Error: ", error);
+        session.close();
     }
 
     @OnWebSocketClose

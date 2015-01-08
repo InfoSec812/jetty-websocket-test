@@ -6,9 +6,13 @@
 package com.zanclus.websocket;
 
 import com.beust.jcommander.JCommander;
+
 import java.net.URI;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
+
 import lombok.extern.slf4j.Slf4j;
+
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 import org.eclipse.jetty.websocket.client.ClientUpgradeRequest;
 import org.eclipse.jetty.websocket.client.WebSocketClient;
@@ -40,7 +44,7 @@ public class Main {
             URI sinkTarget = new URI(config.serverUrl()+"?for=sungardas");
             ClientUpgradeRequest request = new ClientUpgradeRequest();
             if (config.headers()!=null) {
-                for (String line: Files.readAllLines(config.headers().toPath())) {
+                for (String line: Files.readAllLines(config.headers().toPath(), Charset.defaultCharset())) {
                     LOG.info("Header Line| "+line);
                     String[] header = line.split(":", 2);
                     request.setHeader(header[0], header[1]);
